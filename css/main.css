@@ -1162,7 +1162,7 @@ pre .javascript .function {
   }
 }
 .sidebar-inner {
-  color: #708090;
+  color: #999;
   padding: 18px 10px;
   text-align: center;
 }
@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffa;
+  background: #36de34;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
