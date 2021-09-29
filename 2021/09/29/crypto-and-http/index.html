@@ -24,17 +24,23 @@
     var CONFIG = {"hostname":"ztlpluz.github.io","root":"/Opynicus.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="May I stay unshaken">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Opynicus&#39; Soliloquy">
-<meta property="og:url" content="https://ztlpluz.github.io/Opynicus.github.io/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/index.html">
+  <meta name="description" content="问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决hexo-blog-encrypt在自定义域名后失效的问题">
+<meta property="og:url" content="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/index.html">
 <meta property="og:site_name" content="Opynicus&#39; Soliloquy">
-<meta property="og:description" content="May I stay unshaken">
+<meta property="og:description" content="问题">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/step1.jpg">
+<meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/step2.jpg">
+<meta property="article:published_time" content="2021-09-29T05:51:36.000Z">
+<meta property="article:modified_time" content="2021-09-29T07:04:35.244Z">
 <meta property="article:author" content="Opynicus">
+<meta property="article:tag" content="issue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/step1.jpg">
 
-<link rel="canonical" href="https://ztlpluz.github.io/Opynicus.github.io/categories/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/">
+<link rel="canonical" href="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/">
 
 
 <script id="page-configurations">
@@ -42,7 +48,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
@@ -55,7 +61,7 @@
     document.body.addEventListener('input', POWERMODE);
   </script>
 <script src="/Opynicus.github.io/lib/fireworks.js"></script>
-  <title>分类: 胡言乱语 | Opynicus' Soliloquy</title>
+  <title>解决hexo-blog-encrypt在自定义域名后失效的问题 | Opynicus' Soliloquy</title>
   
 
 
@@ -204,117 +210,134 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ztlpluz.github.io/Opynicus.github.io/2021/09/29/crypto-and-http/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Opynicus.github.io/images/avatar.png">
+      <meta itemprop="name" content="Opynicus">
+      <meta itemprop="description" content="May I stay unshaken">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Opynicus' Soliloquy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          解决hexo-blog-encrypt在自定义域名后失效的问题
+        </h1>
+
+        <div class="post-meta">
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-29 13:51:36 / 修改时间：15:04:35" itemprop="dateCreated datePublished" datetime="2021-09-29T13:51:36+08:00">2021-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Opynicus.github.io/categories/%E4%B8%89%E8%A8%80%E4%B8%A4%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">三言两语</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">胡言乱语
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Opynicus.github.io/2021/09/29/crypto-and-http/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Opynicus.github.io/2021/09/29/crypto-and-http/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><span id="more"></span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>​        昨天刚把Index Page自定义域名，然后原博客就成为了Index Page下的二级域名，但是加密文章的解密功能失效，即输入密码敲回车没反应，打开console，报错信息如下。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blog-encrypt.js:94 Uncaught (in promise) TypeError: Cannot read property &#x27;importKey&#x27; of undefined</span><br><span class="line">at getKeyMaterial (hbe.js:94)</span><br><span class="line">at HTMLDivElement. (hbe.js:255)</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-09T10:44:15+08:00"
-              content="2021-09-09">
-          09-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Opynicus.github.io/2021/09/09/art-of-politics/" itemprop="url">
-            <span itemprop="name">说话的艺术</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-02T09:03:10+08:00"
-              content="2021-09-02">
-          09-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Opynicus.github.io/2021/09/02/Gibberish3/" itemprop="url">
-            <span itemprop="name">《胡言乱语·其三》</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-26T21:50:35+08:00"
-              content="2021-08-26">
-          08-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Opynicus.github.io/2021/08/26/Gibberish2/" itemprop="url">
-            <span itemprop="name">《胡言乱语·其二》</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-22T09:25:36+08:00"
-              content="2021-08-22">
-          08-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Opynicus.github.io/2021/08/22/2021-8-22/" itemprop="url">
-            <span itemprop="name">《胡言乱语·其一》</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<p>​        以上报错信息与js文件本身无关，因为打开localhost查看时完全没有影响。</p>
+<h1 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h1><p>​        Chrome强制把<strong>所有<code>http</code>资源尝试用 <code>https</code> 访问</strong>, 如果访问失败, 会明确在控制台提示加载<code>https</code>资源不存在, 然后退化后的<code>http</code>资源再<strong>默认禁止</strong>, 而且这个选项可以通过网站设置修改。为什么<code>localhost</code>不受影响，因为浏览器对本地页面绝对信任。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>​        将站点切换为<code>https</code></p>
+<p>​        由于站长用的是cloudflare的域名解析服务，修改起来十分方便。</p>
+<p>​        1，在cloudflare管理网站页面中，打开<strong>SSL/TLS</strong>选项</p>
+<p>​        <img src="/Opynicus.github.io/2021/09/29/crypto-and-http/step1.jpg" class></p>
+<p>​        2,在边缘证书中，点击<strong>始终使用 HTTPS</strong>按钮</p>
+<p>​        <img src="/Opynicus.github.io/2021/09/29/crypto-and-http/step2.jpg" class></p>
+<h1 id="其它未尝试方法"><a href="#其它未尝试方法" class="headerlink" title="其它未尝试方法"></a>其它未尝试方法</h1><p>​        1，也可以通过<code>Github Pages</code>下的<code>Enforce HTTPS</code>选项来强制开启https。</p>
+<p>​        2，如上条<code>Enforce HTTPS</code>无法点击，则移步<a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/getting-started/">此网站</a>解决，执行脚本程序为网站添上https。</p>
+<hr>
+<p>​        解决的过程中，参考了<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/issues/114">对应github页面issue</a>中的内容，具体原因也在其中有说明。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/Opynicus.github.io/tags/issue/" rel="tag"># issue</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Opynicus.github.io/2021/09/26/Week4/" rel="prev" title="大三上第四周">
+      <i class="fa fa-chevron-left"></i> 大三上第四周
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -360,6 +383,7 @@
       </ul>
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0"><span class="nav-number">2.</span> <span class="nav-text">错误原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%9C%AA%E5%B0%9D%E8%AF%95%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">其它未尝试方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
