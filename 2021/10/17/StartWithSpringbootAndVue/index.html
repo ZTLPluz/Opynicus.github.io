@@ -26,7 +26,7 @@
 
   <meta name="description" content="​    前后端分离嗯造了属实是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot+Vue前后端分离起步">
+<meta property="og:title" content="SpringBoot+Vue+postgreSql前后端分离起步">
 <meta property="og:url" content="https://ztlpluz.github.io/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/index.html">
 <meta property="og:site_name" content="Opynicus&#39; Soliloquy">
 <meta property="og:description" content="​    前后端分离嗯造了属实是">
@@ -38,8 +38,9 @@
 <meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/5.jpg">
 <meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/6.jpg">
 <meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/7.jpg">
+<meta property="og:image" content="https://ztlpluz.github.io/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/8.jpg">
 <meta property="article:published_time" content="2021-10-17T12:41:53.000Z">
-<meta property="article:modified_time" content="2021-10-17T14:16:18.192Z">
+<meta property="article:modified_time" content="2021-10-20T13:49:50.008Z">
 <meta property="article:author" content="Opynicus">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Vue">
@@ -67,7 +68,7 @@
     document.body.addEventListener('input', POWERMODE);
   </script>
 <script src="/Opynicus.github.io/lib/fireworks.js"></script>
-  <title>SpringBoot+Vue前后端分离起步 | Opynicus' Soliloquy</title>
+  <title>SpringBoot+Vue+postgreSql前后端分离起步 | Opynicus' Soliloquy</title>
   
 
 
@@ -236,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SpringBoot+Vue前后端分离起步
+          SpringBoot+Vue+postgreSql前后端分离起步
         </h1>
 
         <div class="post-meta">
@@ -246,10 +247,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-10-17 20:41:53 / 修改时间：22:16:18" itemprop="dateCreated datePublished" datetime="2021-10-17T20:41:53+08:00">2021-10-17</time>
+              <time title="创建时间：2021-10-17 20:41:53" itemprop="dateCreated datePublished" datetime="2021-10-17T20:41:53+08:00">2021-10-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-20 21:49:50" itemprop="dateModified" datetime="2021-10-20T21:49:50+08:00">2021-10-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -347,6 +354,17 @@
 <p>3，然后在此打开<code>http://localhost:8080/about</code>查看，发现成功显示</p>
 <img src="/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/7.jpg" class>
 
+<h1 id="数据库相关-后添加内容"><a href="#数据库相关-后添加内容" class="headerlink" title="数据库相关(后添加内容)"></a>数据库相关(后添加内容)</h1><p>​                    1，用的postgreSql来作为实验对象,添加JDBC依赖,在配置文件中添加如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server.port= 8081</span><br><span class="line"></span><br><span class="line">spring.datasource.driver-class-name=org.postgresql.Driver</span><br><span class="line">spring.datasource.url=jdbc:postgresql://localhost:5432/ENROLLED</span><br><span class="line">spring.datasource.username=postgres</span><br><span class="line">spring.datasource.password=xxxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<p>​                        2,创建查询类，例如我们查表ENROLLED中的前十位学生信息。</p>
+<p>postgreSqlJdbcQuery.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.db.dbdemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">postgreSqlJdbcQuery</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/Query&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> student[] main(String[] args) &#123;</span><br><span class="line">        Connection c = <span class="keyword">null</span>;</span><br><span class="line">        Statement stmt = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class.forName(<span class="string">&quot;org.postgresql.Driver&quot;</span>);</span><br><span class="line">            c = DriverManager.getConnection(</span><br><span class="line">                    <span class="string">&quot;jdbc:postgresql://localhost:5432/ENROLLED&quot;</span>, <span class="string">&quot;postgres&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;xxxxxxxxxx&quot;</span>);</span><br><span class="line">            c.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">            student[] stu =<span class="keyword">new</span> student[<span class="number">10</span>];</span><br><span class="line">            System.out.println(<span class="string">&quot;连接数据库成功！&quot;</span>);</span><br><span class="line">            stmt = c.createStatement();</span><br><span class="line"><span class="comment">//            System.out.println(&quot;输入id&quot;);</span></span><br><span class="line"><span class="comment">//            Scanner scan = new Scanner(System.in);</span></span><br><span class="line"><span class="comment">//            int id = scan.nextInt();</span></span><br><span class="line">            System.out.println(<span class="string">&quot;查询所有student表中数据&quot;</span>);</span><br><span class="line">            ResultSet rs = stmt.executeQuery(<span class="string">&quot;select * from student limit 10&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                <span class="keyword">int</span> sno = rs.getInt(<span class="string">&quot;sno&quot;</span>);</span><br><span class="line">                String sname = rs.getString(<span class="string">&quot;sname&quot;</span>);</span><br><span class="line">                String ssex = rs.getString(<span class="string">&quot;ssex&quot;</span>);</span><br><span class="line">                <span class="keyword">int</span> sage = rs.getInt(<span class="string">&quot;sage&quot;</span>);</span><br><span class="line">                String sdept = rs.getString(<span class="string">&quot;sdept&quot;</span>);</span><br><span class="line">                System.out.println(sno + <span class="string">&quot;,&quot;</span> + sname + <span class="string">&quot;,&quot;</span> + ssex + <span class="string">&quot;,&quot;</span> + sage + <span class="string">&quot;,&quot;</span> + sdept);</span><br><span class="line">                stu[i]= <span class="keyword">new</span> student(sno,sname,ssex,sage,sdept);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            rs.close();</span><br><span class="line">            stmt.close();</span><br><span class="line">            c.close();</span><br><span class="line">            <span class="keyword">return</span> stu;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.err.println(e.getClass().getName() + <span class="string">&quot;: &quot;</span> + e.getMessage());</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;查询数据成功！&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​                3,然后打开对应页面可看到返回的JSON数据</p>
+<img src="/Opynicus.github.io/2021/10/17/StartWithSpringbootAndVue/8.jpg" class>
+
+<p>不过类似在后端输入什么信息例如输id找信息这种需要先访问后台接口才能开启输入。本例是多行JSON数据，目前就想到了用类数组来解决，但Java没有动态类数组，或者说不像C++有vector那样自带的stl容器，因为不知查询的数量结果，而又需要提前给数组容量初始化，数组元素个数不能少于查询结果，而高于查询结果后面会留一堆null，虽然前端稍微改改也没事，但还是影响观感，现在想起vector的好了算是。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​        样例给得确实很简单，深度也不够，但本人为了弄清楚也还是花了挺多时间的，主要时间还是花在了理解SpringBoot的使用与查找如何实现交互上，大多数例子要么只讲前端接收api，要么后端讲一半，在找到一个能当HelloWorld用的前后端分离性质的内容太少。然后就是跨域访问吧，这个还好，这个问题应该较为普遍，解决方法很好找。当然，例子也没用上数据库，主要是之前试用的时候出了问题，然后还没想到如何解决，再说吧。至少现在做个前后端分离的登陆注册页面这种是不难了。。罢。</p>
 
     </div>
@@ -432,7 +450,7 @@
       </ul>
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF-IDE-Intellij-Idea"><span class="nav-number">3.</span> <span class="nav-text">后端(IDE:Intellij Idea)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A0-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">Ⅰ,准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A1-Coding"><span class="nav-number">3.2.</span> <span class="nav-text">Ⅱ,Coding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-Vue-3-x"><span class="nav-number">4.</span> <span class="nav-text">前端(Vue 3.x)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A0-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C-1"><span class="nav-number">4.1.</span> <span class="nav-text">Ⅰ,准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A1-%E4%BD%BF%E7%94%A8axios%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE"><span class="nav-number">4.2.</span> <span class="nav-text">Ⅱ,使用axios接收数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A2-%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.</span> <span class="nav-text">Ⅲ,解决跨域访问的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF-IDE-Intellij-Idea"><span class="nav-number">3.</span> <span class="nav-text">后端(IDE:Intellij Idea)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A0-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">Ⅰ,准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A1-Coding"><span class="nav-number">3.2.</span> <span class="nav-text">Ⅱ,Coding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-Vue-3-x"><span class="nav-number">4.</span> <span class="nav-text">前端(Vue 3.x)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A0-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C-1"><span class="nav-number">4.1.</span> <span class="nav-text">Ⅰ,准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A1-%E4%BD%BF%E7%94%A8axios%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE"><span class="nav-number">4.2.</span> <span class="nav-text">Ⅱ,使用axios接收数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%85%A2-%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.</span> <span class="nav-text">Ⅲ,解决跨域访问的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3-%E5%90%8E%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="nav-number">5.</span> <span class="nav-text">数据库相关(后添加内容)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
