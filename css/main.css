@@ -1004,7 +1004,7 @@ pre .javascript .function {
   display: flex;
   flex-shrink: 0;
   padding: 0 10px;
-  background: #ee82ee;
+  background: #708090;
 }
 .headband {
   background: #222;
@@ -1021,7 +1021,8 @@ pre .javascript .function {
 }
 .brand {
   border-bottom: none;
-  color: #0ff;
+  color: #adff2f;
+  text-shadow: 0 0 10px #0ff, 0 1px 0 #ffd700;
   display: inline-block;
   line-height: 1.375em;
   padding: 0 40px;
@@ -1246,7 +1247,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #33dd38;
+  background: #d673ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
