@@ -86,7 +86,37 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#000000;--content-bg-color:#333;--card-bg-color:rgb(22, 19, 19);--text-color:rgb(44, 43, 43);--blockquote-color:rgb(55, 53, 53);--link-color:rgb(37, 37, 37);--link-hover-color:rgb(49, 48, 48);--brand-color:rgb(51, 50, 50);--brand-hover-color:rgb(22, 22, 22);--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#222529;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#0c0d0e}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style><style>.darkmode--activated{--body-bg-color:#000000;--content-bg-color:#333;--card-bg-color:rgb(22, 19, 19);--text-color:rgb(44, 43, 43);--blockquote-color:rgb(55, 53, 53);--link-color:rgb(37, 37, 37);--link-hover-color:rgb(49, 48, 48);--brand-color:rgb(51, 50, 50);--brand-hover-color:rgb(22, 22, 22);--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#222529;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#0c0d0e}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -220,7 +250,7 @@
     <div class="posts-collapse">
       <div class="collection-title">
         
-        <span class="collection-header">还行! 目前共计 35 篇日志。 继续努力。</span>
+        <span class="collection-header">还行! 目前共计 34 篇日志。 继续努力。</span>
       </div>
 
       
@@ -480,14 +510,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Opynicus.github.io/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Opynicus.github.io/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
