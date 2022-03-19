@@ -1298,7 +1298,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #83ff83;
+  background: #508806;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2480,7 +2480,7 @@ mjx-container + br {
   }
 }
 .site-brand-container {
-  background: $blueviolet;
+  background: #708090;
 }
 @media (max-width: 991px) {
   .site-brand-container {
